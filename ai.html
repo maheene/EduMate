@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Chat Assistant</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Keep your global CSS -->
+  <style>
+    :root {
+      --primary-color: #4a90e2;   /* example theme colors */
+      --secondary-color: #f0f4f8;
+      --accent-color: #ff6b6b;
+      --background-color: #ffffff;
+      --text-color: #333333;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--background-color);
+    }
+
+    .ai-container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background: var(--background-color);
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .ai-title {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .ai-placeholder {
+      height: 250px;
+      background: var(--secondary-color);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-color);
+      font-size: 1rem;
+      margin-bottom: 30px;
+      border: 2px dashed var(--accent-color);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.02); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.8; }
+    }
+
+    .upload-wrapper {
+      position: relative;
+    }
+
+    .upload-btn {
+      background: var(--accent-color);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 2rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .upload-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    }
+
+    .upload-options {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .upload-wrapper:hover .upload-options {
+      display: flex;
+    }
+
+    .option-btn {
+      background: var(--primary-color);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-weight: 500;
+    }
+
+    .option-btn:hover {
+      background: var(--accent-color);
+      transform: translateY(-2px);
+    }
+
+    .back-btn {
+      margin-top: 30px;
+      background: var(--primary-color);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .back-btn:hover {
+      background: var(--accent-color);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="ai-container">
+    <h2 class="ai-title">AI Chat Assistant (coming soon)</h2>
+    <div class="ai-placeholder">
+      <p>Your AI chat will appear here.</p>
+    </div>
+
+    <div class="upload-wrapper">
+      <button class="upload-btn">+</button>
+      <div class="upload-options">
+        <button class="option-btn">Take Picture</button>
+        <button class="option-btn">Add Image</button>
+      </div>
+    </div>
+
+    <a href="index.html"><button class="back-btn">Back to Home</button></a>
+  </div>
+</body>
+</html>

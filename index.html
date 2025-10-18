@@ -1,104 +1,23 @@
-<div class="ai-container">
-  <h2 class="ai-title">AI Chat Assistant (coming soon)</h2>
-  
-  <!-- Empty AI Chat Area -->
-  <div class="ai-placeholder">
-    <p>Your AI chat will appear here.</p>
-  </div>
-
-  <!-- Upload Button -->
-  <div class="upload-wrapper">
-    <button class="upload-btn">+</button>
-    <div class="upload-options">
-      <button class="option-btn">Take Picture</button>
-      <button class="option-btn">Add Image</button>
-    </div>
-  </div>
-</div>
+<a href="ai.html">
+  <button class="ai-page-btn">Go to AI Assistant</button>
+</a>
 
 <style>
-/* Container */
-.ai-container {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 20px;
-  background: var(--background-color); /* your theme bg */
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  font-family: 'Inter', sans-serif;
-  text-align: center;
-}
-
-/* Title */
-.ai-title {
-  font-size: 1.8rem;
-  color: var(--primary-color); /* your theme primary */
-  margin-bottom: 20px;
-  font-weight: 600;
-}
-
-/* Placeholder Box */
-.ai-placeholder {
-  height: 250px;
-  background: var(--secondary-color); /* your theme secondary */
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-color);
-  font-size: 1rem;
-  margin-bottom: 30px;
-  border: 2px dashed var(--accent-color); /* optional modern dashed style */
-}
-
-/* Upload Button */
-.upload-wrapper {
-  position: relative;
-}
-
-.upload-btn {
-  background: var(--accent-color); /* theme accent */
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  font-size: 2rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.upload-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-}
-
-/* Upload Options (hidden by default) */
-.upload-options {
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.upload-wrapper:hover .upload-options {
-  display: flex;
-}
-
-/* Option Buttons */
-.option-btn {
+.ai-page-btn {
   background: var(--primary-color);
   color: #fff;
   border: none;
   border-radius: 12px;
-  padding: 10px 20px;
+  padding: 12px 24px;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.2s ease;
   font-weight: 500;
+  margin: 20px auto;
+  display: block;
 }
 
-.option-btn:hover {
+.ai-page-btn:hover {
   background: var(--accent-color);
   transform: translateY(-2px);
 }
