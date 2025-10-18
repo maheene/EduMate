@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Chat Assistant</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Keep your global CSS -->
+  <title>EduMate AI Assistant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #4a90e2;   /* example theme colors */
+      --primary-color: #4a90e2;
       --secondary-color: #f0f4f8;
       --accent-color: #ff6b6b;
       --background-color: #ffffff;
@@ -18,48 +18,93 @@
       margin: 0;
       padding: 0;
       font-family: 'Inter', sans-serif;
-      background: var(--background-color);
+      background: var(--secondary-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
     }
 
-    .ai-container {
+    h1 {
+      color: var(--primary-color);
+      margin: 20px 0;
+    }
+
+    .chat-container {
+      width: 90%;
       max-width: 600px;
-      margin: 40px auto;
-      padding: 20px;
       background: var(--background-color);
       border-radius: 16px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-      text-align: center;
-    }
-
-    .ai-title {
-      font-size: 1.8rem;
-      color: var(--primary-color);
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
-
-    .ai-placeholder {
-      height: 250px;
-      background: var(--secondary-color);
-      border-radius: 12px;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-color);
-      font-size: 1rem;
-      margin-bottom: 30px;
+      flex-direction: column;
+      padding: 20px;
+      gap: 10px;
+    }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      min-height: 300px;
       border: 2px dashed var(--accent-color);
-      animation: pulse 2s infinite;
+      border-radius: 12px;
+      padding: 10px;
     }
 
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 0.8; }
-      50% { transform: scale(1.02); opacity: 1; }
-      100% { transform: scale(1); opacity: 0.8; }
+    .message {
+      margin: 5px 0;
+      padding: 8px 12px;
+      border-radius: 12px;
+      max-width: 80%;
     }
 
+    .user-msg {
+      background: var(--primary-color);
+      color: white;
+      align-self: flex-end;
+    }
+
+    .ai-msg {
+      background: #e0e0e0;
+      color: #333;
+      align-self: flex-start;
+    }
+
+    .chat-input {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .chat-input input {
+      flex: 1;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    .chat-input button {
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 12px 20px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .chat-input button:hover {
+      background: var(--primary-color);
+    }
+
+    /* Upload Button */
     .upload-wrapper {
       position: relative;
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
     }
 
     .upload-btn {
@@ -71,16 +116,14 @@
       height: 60px;
       font-size: 2rem;
       cursor: pointer;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: all 0.2s ease;
     }
 
     .upload-btn:hover {
       transform: scale(1.1);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
     }
 
     .upload-options {
@@ -111,7 +154,7 @@
     }
 
     .back-btn {
-      margin-top: 30px;
+      margin-top: 20px;
       background: var(--primary-color);
       color: #fff;
       border: none;
@@ -129,10 +172,16 @@
   </style>
 </head>
 <body>
-  <div class="ai-container">
-    <h2 class="ai-title">AI Chat Assistant (coming soon)</h2>
-    <div class="ai-placeholder">
-      <p>Your AI chat will appear here.</p>
+  <h1>EduMate AI Assistant</h1>
+
+  <div class="chat-container">
+    <div class="chat-messages" id="chatMessages">
+      <div class="ai-msg">Hello! Ask me anything about your schoolwork.</div>
+    </div>
+
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Type a message..." />
+      <button onclick="sendMessage()">Send</button>
     </div>
 
     <div class="upload-wrapper">
@@ -142,8 +191,37 @@
         <button class="option-btn">Add Image</button>
       </div>
     </div>
-
-    <a href="index.html"><button class="back-btn">Back to Home</button></a>
   </div>
+
+  <a href="index.html"><button class="back-btn">Back to Home</button></a>
+
+  <script>
+    function sendMessage() {
+      const input = document.getElementById('userInput');
+      const chat = document.getElementById('chatMessages');
+      if (input.value.trim() === '') return;
+
+      // User message
+      const userMsg = document.createElement('div');
+      userMsg.classList.add('message', 'user-msg');
+      userMsg.textContent = input.value;
+      chat.appendChild(userMsg);
+
+      // Scroll to bottom
+      chat.scrollTop = chat.scrollHeight;
+
+      // Clear input
+      input.value = '';
+
+      // Placeholder AI response
+      setTimeout(() => {
+        const aiMsg = document.createElement('div');
+        aiMsg.classList.add('message', 'ai-msg');
+        aiMsg.textContent = "This is a placeholder response.";
+        chat.appendChild(aiMsg);
+        chat.scrollTop = chat.scrollHeight;
+      }, 800);
+    }
+  </script>
 </body>
 </html>
