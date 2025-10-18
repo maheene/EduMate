@@ -1,0 +1,149 @@
+:root {
+  --primary: #8E9AAF;
+  --accent: #EEE1B3;
+  --text-dark: #4C5566;
+  --background: #F9F9F9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.logo img {
+  width: 35px;
+  height: 35px;
+}
+
+.nav-links a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, var(--primary) 0%, var(--accent) 100%);
+  color: white;
+}
+
+.hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.cta-btn {
+  background: white;
+  color: var(--primary);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.cta-btn:hover {
+  background: var(--accent);
+  color: var(--text-dark);
+}
+
+/* About */
+.about, .features, .chat-placeholder {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about h2, .features h2, .chat-placeholder h2 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Features */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+}
+
+.feature-card h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+/* Chat Placeholder */
+.chat-box {
+  border: 2px dashed var(--primary);
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: white;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+}
