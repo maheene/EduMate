@@ -1,49 +1,105 @@
-https://github.com/maheene/EduMate<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EduMate</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
-</head>
-<body>
-  <header>
-    <div class="logo-container">
-      <img src="logo.png" alt="EduMate Logo" class="logo" />
+<div class="ai-container">
+  <h2 class="ai-title">AI Chat Assistant (coming soon)</h2>
+  
+  <!-- Empty AI Chat Area -->
+  <div class="ai-placeholder">
+    <p>Your AI chat will appear here.</p>
+  </div>
+
+  <!-- Upload Button -->
+  <div class="upload-wrapper">
+    <button class="upload-btn">+</button>
+    <div class="upload-options">
+      <button class="option-btn">Take Picture</button>
+      <button class="option-btn">Add Image</button>
     </div>
-  </header>
+  </div>
+</div>
 
-  <main>
-    <section class="hero">
-      <h1>Welcome to EduMate</h1>
-      <p>Your all-in-one smart learning companion.</p>
-    </section>
+<style>
+/* Container */
+.ai-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: var(--background-color); /* your theme bg */
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+}
 
-    <section class="ai-section">
-      <h2>AI Chat Assistant</h2>
+/* Title */
+.ai-title {
+  font-size: 1.8rem;
+  color: var(--primary-color); /* your theme primary */
+  margin-bottom: 20px;
+  font-weight: 600;
+}
 
-      <div class="chat-container">
-        <div class="chat-box" id="chat-box">
-          <!-- Chat messages will go here -->
-        </div>
+/* Placeholder Box */
+.ai-placeholder {
+  height: 250px;
+  background: var(--secondary-color); /* your theme secondary */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  font-size: 1rem;
+  margin-bottom: 30px;
+  border: 2px dashed var(--accent-color); /* optional modern dashed style */
+}
 
-        <div class="chat-input">
-          <button class="upload-btn" id="upload-btn">+</button>
-          <input type="text" placeholder="Type your message..." id="user-input" />
-          <button class="send-btn" id="send-btn">↑</button>
-        </div>
-      </div>
+/* Upload Button */
+.upload-wrapper {
+  position: relative;
+}
 
-      <div class="upload-options" id="upload-options">
-        <button>📷 Take Picture</button>
-        <button>🖼️ Add Image</button>
-      </div>
-    </section>
-  </main>
+.upload-btn {
+  background: var(--accent-color); /* theme accent */
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
 
-  <footer>
-    <p>© 2025 EduMate | All rights reserved.</p>
-  </footer>
-</body>
-</html>
+.upload-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+/* Upload Options (hidden by default) */
+.upload-options {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.upload-wrapper:hover .upload-options {
+  display: flex;
+}
+
+/* Option Buttons */
+.option-btn {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.option-btn:hover {
+  background: var(--accent-color);
+  transform: translateY(-2px);
+}
+</style>
