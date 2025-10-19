@@ -125,6 +125,7 @@ body {
   background-color: #F8F9FA;
   border-top: 2px solid #E6F0FA;
   position: relative;
+  gap: 0.5rem;
 }
 .chat-input {
   flex: 1;
@@ -142,9 +143,37 @@ body {
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  margin: 0 0.4rem;
   font-size: 1.4rem;
   cursor: pointer;
   transition: background 0.3s;
 }
-.upload-btn:hover, .sen
+.upload-btn:hover, .send-btn:hover { background-color: #FF7B54; }
+
+/* Popup */
+.upload-popup {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 100;
+}
+.popup-option {
+  background-color: #0A4D8C;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.popup-option:hover {
+  background-color: #FF7B54;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Footer */
+.footer { background-color: #0A4D8C; padding: 2rem 1rem; }
+.footer-text { text-align: center; color: #E6F0FA; font-size: 0.95rem; }
