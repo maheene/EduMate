@@ -1,109 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduMate - Your Smart School Companion</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduMate</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-content">
-                <div class="logo">
-                    <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-                    </svg>
-                    <span class="logo-text">EduMate</span>
-                </div>
-                <div class="nav-links">
-                    <a href="#about">About</a>
-                    <a href="#features">Features</a>
-                    <a href="#chat">AI Assistant</a>
-                </div>
-            </div>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="EduMate Logo" />
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#chat">AI Assistant</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>Your Smart School Companion</h1>
+    <p>EduMate helps you stay on top of classes, assignments, and learning — all in one place.</p>
+    <button class="cta-btn">Get Started</button>
+  </header>
+
+  <section id="about" class="about">
+    <h2>About EduMate</h2>
+    <p>EduMate is your personal AI-powered school assistant — here to help you organize, study, and stay ahead. Whether it’s managing notes, reminders, or quick help with concepts, EduMate’s got you covered.</p>
+  </section>
+
+  <section id="features" class="features">
+    <h2>Features</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>Smart Reminders</h3>
+        <p>Keep track of your schoolwork and never miss a deadline again.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Class Notes</h3>
+        <p>Store and access your notes neatly and easily, anytime.</p>
+      </div>
+      <div class="feature-card">
+        <h3>AI Study Help</h3>
+        <p>Ask questions and get help — right when you need it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modern AI Chat UI -->
+  <section id="chat" class="chat-section">
+    <h2>AI Chat Assistant (Coming Soon)</h2>
+    <div class="chat-container">
+      <div class="chat-window">
+        <div class="chat-message bot">
+          👋 Hi there! I’m EduMate, your study partner. Soon, you’ll be able to chat with me for real!
         </div>
-    </nav>
+      </div>
+      <div class="chat-input-area">
+        <button class="upload-btn">＋</button>
+        <input type="text" class="chat-input" placeholder="Type your message..." disabled>
+        <button class="send-btn">↑</button>
+      </div>
+    </div>
+  </section>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Your Smart School Companion</h1>
-            <p class="hero-subtitle">EduMate helps you stay on top of classes, assignments, and learning — all in one place.</p>
-            <button class="btn-primary">Get Started</button>
-        </div>
-    </header>
-
-    <section id="about" class="section section-white">
-        <div class="section-content-center">
-            <h2 class="section-title">About EduMate</h2>
-            <p class="about-text">
-                EduMate is your personal AI-powered school assistant — here to help you organize, study, and stay ahead.
-                Whether it's managing notes, reminders, or quick help with concepts, EduMate's got you covered.
-            </p>
-        </div>
-    </section>
-
-    <section id="features" class="section section-gray">
-        <div class="section-content-wide">
-            <h2 class="section-title">Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
-                            <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">Smart Reminders</h3>
-                    <p class="feature-description">Keep track of your schoolwork and never miss a deadline again.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">Class Notes</h3>
-                    <p class="feature-description">Store and access your notes neatly and easily, anytime.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">AI Study Help</h3>
-                    <p class="feature-description">Ask questions and get help — right when you need it.</p>
-                </div>
-            </div>
-
-            <div class="cta-container">
-                <a href="#chat">
-                    <button class="btn-primary btn-hover-red">Go to AI Assistant</button>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="chat" class="section section-white">
-        <div class="section-content-center">
-            <h2 class="section-title">AI Chat Assistant (Coming Soon)</h2>
-            <div class="chat-placeholder">
-                <p class="chat-placeholder-text">
-                    This is where the EduMate AI will live. Soon you'll be able to chat, ask questions, and get real-time school help.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <p class="footer-text">© 2025 EduMate. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <footer>
+    <p>© 2025 EduMate. All rights reserved.</p>
+  </footer>
 </body>
 </html>
