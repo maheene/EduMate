@@ -5,9 +5,6 @@ uploadBtn.addEventListener("click", (e) => {
   e.stopPropagation();
   uploadPopup.style.display =
     uploadPopup.style.display === "flex" ? "none" : "flex";
-  uploadPopup.style.position = "absolute";
-  uploadPopup.style.top = `${uploadBtn.getBoundingClientRect().top - 90}px`;
-  uploadPopup.style.left = `${uploadBtn.getBoundingClientRect().left - 20}px`;
 });
 
 document.addEventListener("click", (e) => {

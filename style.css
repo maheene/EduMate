@@ -124,6 +124,7 @@ body {
   padding: 0.8rem 1rem;
   background-color: #F8F9FA;
   border-top: 2px solid #E6F0FA;
+  position: relative;
 }
 .chat-input {
   flex: 1;
@@ -146,33 +147,4 @@ body {
   cursor: pointer;
   transition: background 0.3s;
 }
-.upload-btn:hover, .send-btn:hover { background-color: #FF7B54; }
-
-/* Popup */
-.upload-popup {
-  position: absolute;
-  background-color: white;
-  border: 1px solid #E6F0FA;
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  padding: 0.5rem;
-  display: none;
-  flex-direction: column;
-  gap: 0.5rem;
-  top: 0;
-}
-.popup-option {
-  background: none;
-  border: none;
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
-  text-align: left;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.popup-option:hover { background-color: #E6F0FA; }
-
-/* Footer */
-.footer { background-color: #0A4D8C; padding: 2rem 1rem; }
-.footer-text { text-align: center; color: #E6F0FA; font-size: 0.95rem; }
+.upload-btn:hover, .sen
