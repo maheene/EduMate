@@ -10,7 +10,13 @@
 <body>
   <nav class="navbar">
     <div class="logo">
-      <img src="logo.png" alt="EduMate Logo" />
+      <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" 
+        viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+      </svg>
+      <span class="logo-text">EduMate</span>
     </div>
     <div class="nav-links">
       <a href="#about">About</a>
@@ -50,17 +56,21 @@
 
   <!-- Modern AI Chat UI -->
   <section id="chat" class="chat-section">
-    <h2>AI Chat Assistant (Coming Soon)</h2>
+    <h2>AI Chat Assistant</h2>
     <div class="chat-container">
-      <div class="chat-window">
+      <div class="chat-window" id="chatWindow">
         <div class="chat-message bot">
           👋 Hi there! I’m EduMate, your study partner. Soon, you’ll be able to chat with me for real!
         </div>
       </div>
       <div class="chat-input-area">
-        <button class="upload-btn">＋</button>
-        <input type="text" class="chat-input" placeholder="Type your message..." disabled>
-        <button class="send-btn">↑</button>
+        <div class="upload-popup" id="uploadPopup">
+          <button onclick="selectUpload('upload')">📁 Upload Image</button>
+          <button onclick="selectUpload('camera')">📸 Take Photo</button>
+        </div>
+        <button class="upload-btn" id="uploadBtn">＋</button>
+        <input type="text" class="chat-input" id="chatInput" placeholder="Type your message...">
+        <button class="send-btn" id="sendBtn">➤</button>
       </div>
     </div>
   </section>
@@ -68,5 +78,7 @@
   <footer>
     <p>© 2025 EduMate. All rights reserved.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

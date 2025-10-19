@@ -1,47 +1,39 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
+const uploadBtn = document.getElementById("uploadBtn");
+const uploadPopup = document.getElementById("uploadPopup");
+const sendBtn = document.getElementById("sendBtn");
+const chatInput = document.getElementById("chatInput");
+const chatWindow = document.getElementById("chatWindow");
+
+uploadBtn.addEventListener("click", () => {
+  uploadPopup.style.display = uploadPopup.style.display === "flex" ? "none" : "flex";
 });
 
-// Add animation on scroll (optional enhancement)
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+function selectUpload(type) {
+  uploadPopup.style.display = "none";
+  alert(type === "upload" ? "Upload image option selected." : "Camera option selected.");
+}
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe all sections for fade-in animation
-document.querySelectorAll('section').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(20px)';
-    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(section);
+sendBtn.addEventListener("click", sendMessage);
+chatInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") sendMessage();
 });
 
-// Button click handlers
-document.querySelectorAll('.btn-primary').forEach(button => {
-    button.addEventListener('click', function(e) {
-        if (!this.closest('a')) {
-            console.log('Button clicked:', this.textContent);
-            // Add your button functionality here
-        }
-    });
-});
+function sendMessage() {
+  const text = chatInput.value.trim();
+  if (!text) return;
 
+  const userMsg = document.createElement("div");
+  userMsg.classList.add("chat-message", "user");
+  userMsg.textContent = text;
+  chatWindow.appendChild(userMsg);
+  chatInput.value = "";
+  chatWindow.scrollTop = chatWindow.scrollHeight;
+
+  setTimeout(() => {
+    const botMsg = document.createElement("div");
+    botMsg.classList.add("chat-message", "bot");
+    botMsg.textContent = "👋 Hi there! I’m EduMate — AI chat coming soon!";
+    chatWindow.appendChild(botMsg);
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+  }, 600);
+}
