@@ -17,10 +17,10 @@ uploadBtn.addEventListener("click", (e) => {
 
   // Position popup above the plus button
   const btnRect = uploadBtn.getBoundingClientRect();
-  const parentRect = uploadBtn.parentElement.getBoundingClientRect();
+  const containerRect = chatWindow.parentElement.getBoundingClientRect();
 
-  uploadPopup.style.top = `${btnRect.top - parentRect.top - uploadPopup.offsetHeight - 8}px`;
-  uploadPopup.style.left = `${btnRect.left - parentRect.left}px`;
+  uploadPopup.style.left = `${btnRect.left - containerRect.left}px`;
+  uploadPopup.style.top = `${btnRect.top - containerRect.top - uploadPopup.offsetHeight - 8}px`;
 });
 
 // Close popup when clicking outside
